@@ -143,7 +143,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"⎊ فشل التشغيل بسبب ان السوره طويلة {DURATION_LIMIT} شغل سوره تانية {BOT_NAME}."
+                f"⎊ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل الاغنيه تانية {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -172,13 +172,13 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"⎊ فشل التشغيل بسبب ان السوره طويلة {DURATION_LIMIT} شغل سوره تانية {BOT_NAME}.."
+                f"⎊ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل سوره تانية {BOT_NAME}.."
             )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
-            return await fallen.edit_text("⎊ اكتب اسم السوره اللي عايز تشغلها")
-        await fallen.edit_text("⎊ جارٍ التشغيل ⚡")
+            return await fallen.edit_text("⎊ اكتب اسم الاغنيه اللي عايز تشغلها")
+        await fallen.edit_text(" جارٍ التشغيل يغالي ⚡")
         query = message.text.split(None, 1)[1]
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -194,7 +194,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit("⎊ فشل في المعالجة جرب مرة أخرى...")
+            return await fallen.edit(" فشل في المعالجة جرب مرة أخرى...")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit(
@@ -234,7 +234,7 @@ async def play(_, message: Message):
 
         except NoActiveGroupCall:
             return await fallen.edit_text(
-                "**⎊ افتح المكالمة الصوتية اولاً **\n**⎊ يرجى التأكد من فتح محادثة الفيديو**"
+                "**افتح يابا الكول الاول متشلنيش**\n** خخخ افتح يابا مكالمه الفديو الاول **"
             )
         except TelegramServerError:
             return await fallen.edit_text(
@@ -250,7 +250,7 @@ async def play(_, message: Message):
         await add_active_chat(message.chat.id)
         await message.reply_photo(
             photo=imgt,
-            caption=f"‌‌‏‌‌‏‌‌‏≪⊶⌯━‌‌‏♢ ⦓ ѕᴏᴜʀᴄᴇ ʀᴇғᴢ 𖤛 ⦔ ♢━‌‌‏⌯⊷≫\n**⎊ تـم الـتـشـغـيـل ✅**\n\n⎊ **العنوان :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⎊ **المده :** `{duration}` دقيقه\n⎊ **بواسطه :** {ruser}\n‌‌‏‌‌‏‌‌‏≪⊶⌯━‌‌‏♢ ⦓ ѕᴏᴜʀᴄᴇ ʀᴇғᴢ 𖤛 ⦔ ♢━‌‌‏⌯⊷≫",
+            caption=f"≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫\n**⎊ تـم الـتـشـغـيـل ✅**\n\n⎊ **العنوان :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⎊ **المده :** `{duration}` دقيقه\n⎊ **بواسطه :** {ruser}\n≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫",
             reply_markup=buttons,
         )
 
