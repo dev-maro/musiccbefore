@@ -46,7 +46,7 @@ async def activevc(_, message: Message):
             text += f"<b>{j + 1}. {title}</b> [`{x}`]\n"
         j += 1
     if not text:
-        await mystic.edit_text("⎊ لا يـوجد مكالمات في الوقت الحالي")
+        await mystic.edit_text("مفيش مكالمه حاليا يغالي")
     else:
         await mystic.edit_text(
             f"**قائمة المكالمات الشغالة :**\n\n{text}",

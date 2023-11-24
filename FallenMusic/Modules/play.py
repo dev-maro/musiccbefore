@@ -60,7 +60,7 @@ from FallenMusic.Helpers.thumbnails import gen_qthumb, gen_thumb
 
 
 @app.on_message(
-    filters.command(["play", "شغل", "تشغيل"]) | filters.command(["تشغيل","شغل","ش"],prefixes= ["/", "!","","#"])
+    filters.command(["play", "مارو", "البوب", "شغل", "تشغيل"]) | filters.command(["تشغيل","شغل","ش"],prefixes= ["/", "!","","#"])
     & ~filters.forwarded
     & ~filters.via_bot
 )
@@ -143,7 +143,7 @@ async def play(_, message: Message):
     if audio:
         if round(audio.duration / 60) > DURATION_LIMIT:
             raise DurationLimitError(
-                f"⎊ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل الاغنيه تانية {BOT_NAME}."
+                f"⎊ فشل التشغيل بسبب ان السوره طويلة {DURATION_LIMIT} شغل سوره تانية {BOT_NAME}."
             )
 
         file_name = get_file_name(audio)
@@ -172,13 +172,13 @@ async def play(_, message: Message):
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit_text(
-                f"⎊ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل سوره تانية {BOT_NAME}.."
+                f"⎊ فشل التشغيل بسبب ان الاغنيه طويلة {DURATION_LIMIT} شغل اغنيه تانية {BOT_NAME}.."
             )
         file_path = audio_dl(url)
     else:
         if len(message.command) < 2:
             return await fallen.edit_text("⎊ اكتب اسم الاغنيه اللي عايز تشغلها")
-        await fallen.edit_text(" جارٍ التشغيل يغالي ⚡")
+        await fallen.edit_text("⎊  جارٍ التشغيل يغالي....⚡")
         query = message.text.split(None, 1)[1]
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
@@ -194,7 +194,7 @@ async def play(_, message: Message):
 
         except Exception as e:
             LOGGER.error(str(e))
-            return await fallen.edit(" فشل في المعالجة جرب مرة أخرى...")
+            return await fallen.edit("⎊حصل مشكله يغالي جرب مره تانيه")
 
         if (dur / 60) > DURATION_LIMIT:
             return await fallen.edit(
@@ -234,7 +234,7 @@ async def play(_, message: Message):
 
         except NoActiveGroupCall:
             return await fallen.edit_text(
-                "**افتح يابا الكول الاول متشلنيش**\n** خخخ افتح يابا مكالمه الفديو الاول **"
+                "**⎊ افتح المكالمة الصوتية اولاً **\n**⎊ يرجى التأكد من فتح محادثة الفيديو**"
             )
         except TelegramServerError:
             return await fallen.edit_text(

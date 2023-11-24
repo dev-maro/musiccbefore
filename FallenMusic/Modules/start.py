@@ -52,11 +52,10 @@ async def fallen_st(_, message: Message):
                     link = result["link"]
                     published = result["publishedTime"]
                 searched_text = f"""
-‌‌‏≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫
+≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫
+≪ 𖧊 @j_s_9 - @vip_alpop 𖧊 ≫
 ⎊ **تتبع المعلومات ** 
-
 ⎊ **العنوان :** {title}
-
 ⎊ **المدة :** {duration} دقيقة
 ⎊ **الآراء :** `{views}`
 ⎊ **نشرت في :** {published}
@@ -64,7 +63,7 @@ async def fallen_st(_, message: Message):
 ⎊ **القناة :** [{channel}]({channellink})
 
 ⎊ بحث بواسطة {BOT_NAME}
-‌‌‏≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫"""
+≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫
                 key = InlineKeyboardMarkup(
                     [
                         [

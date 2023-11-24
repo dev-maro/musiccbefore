@@ -114,7 +114,7 @@ async def admin_cbs(_, query: CallbackQuery):
         await stream_off(query.message.chat.id)
         await pytgcalls.pause_stream(query.message.chat.id)
         await query.message.reply_text(
-            text=f"⎊ تم ايقاف التشغيل مؤقتاً 🥺\n \n⎊ بواسطة : {query.from_user.mention} 🥀",
+            text=f"⎊ تم ايقاف التشغيل مؤقتاً ...شكرا ينجم انا اصلا زهقت من الناس ال في الكول دي🥺\n \n⎊ بواسطة : {query.from_user.mention} 🥀",
             reply_markup=close_key,
         )
 

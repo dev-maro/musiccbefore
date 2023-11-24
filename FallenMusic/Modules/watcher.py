@@ -105,6 +105,7 @@ async def on_stream_end(pytgcalls, update: Update):
         await app.send_photo(
             chat_id=chat_id,
             photo=img,
-            caption=f"‌‌‏‌‌‏‌‌‏𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 \n**⎊ بـدأ التشغيل ✅**\n\n⎊ **العنوان :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⎊ **المدة :** `{duration}` دقيقه\n⎊ **بواسطه :** {req_by}\n𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏",
+            caption=f"≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫
+≪ 𖧊 @j_s_9 - @vip_alpop 𖧊 ≫\n**⎊ بـدأ التشغيل ✅**\n\n⎊ **العنوان :** [{title[:27]}](https://t.me/{BOT_USERNAME}?start=info_{videoid})\n⎊ **المدة :** `{duration}` دقيقه\n⎊ **بواسطه :** {req_by}\n≪ 𖧊 𝐒𝐎𝐔𝐑𝐂𝐄 𝐀𝐋𝐏𝐎𝐏 𖧊 ≫",
             reply_markup=buttons,
         )
